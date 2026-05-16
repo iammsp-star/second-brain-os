@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Second Brain OS
 
-## Getting Started
+> **A unified digital workspace to eliminate mental overwhelm.**
 
-First, run the development server:
+Track habits, manage projects, save resources, and monitor lifestyle metrics — all in one stunning dark-themed command center.
+
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-v4-000?logo=shadcnui)
+
+---
+
+## ✨ Features
+
+### 📥 The Inbox
+Rapid-capture text entry for thoughts, links, and tasks. Press `C` anywhere to instantly capture.
+
+### 📁 Action Suite
+Interconnected **Projects**, **Tasks**, and Sub-tasks with kanban-style views and priority badges.
+
+### 📝 The Laboratory
+Knowledge base for Notes and Resources (articles, videos) with colored tag organization.
+
+### 🔄 The Tracker
+Daily Habit checklist with **streak counters** and weekly heatmaps.
+
+### 💰 Finances
+Track income, expenses, and savings with summary cards and transaction logs.
+
+### 💪 Fitness
+Log workouts, track calories, and monitor weekly goals.
+
+---
+
+## 🎨 Design System
+
+**Cyber-Minimalist / Dark Cyber** aesthetic:
+
+| Token | Value | Purpose |
+|-------|-------|---------|
+| Background | `#0B0B0F` | Deep Charcoal |
+| Cards | `#16161F` | Soft Dark Gray |
+| Primary | `#E50914` | Crimson Neon Red |
+| Accent | `#FF3344` | Neon Red Highlights |
+| Text | `#FFFFFF` / `#8A8A93` | Crisp White / Muted Gray |
+
+Plus glassmorphism cards, glow effects, smooth animations, and custom scrollbars.
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+# Clone the repo
+git clone https://github.com/iammsp-star/second-brain-os.git
+cd second-brain-os
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⌨️ Keyboard Shortcuts
 
-## Learn More
+| Key | Action |
+|-----|--------|
+| `C` | Open Quick Capture |
+| `/` | Focus Search Bar |
+| `Esc` | Close Modal |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: TypeScript 5
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + [shadcn/ui v4](https://ui.shadcn.com/)
+- **State**: [Zustand](https://zustand.docs.pmnd.rs/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Fonts**: [Inter](https://fonts.google.com/specimen/Inter)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📂 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Dashboard (bento grid)
+│   ├── inbox/             # Quick capture inbox
+│   ├── projects/          # Project management
+│   ├── tasks/             # Kanban task board
+│   ├── notes/             # Knowledge base
+│   ├── habits/            # Habit tracker
+│   ├── finances/          # Financial tracking
+│   └── fitness/           # Workout logging
+├── components/
+│   ├── layout/            # Sidebar, TopNav, AppShell
+│   ├── dashboard/         # Dashboard widgets
+│   ├── quick-capture/     # Quick capture modal
+│   ├── shared/            # Reusable components
+│   └── ui/                # shadcn/ui primitives
+├── hooks/                 # Custom React hooks
+├── store/                 # Zustand state stores
+└── lib/                   # Utilities
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [x] **Phase 1**: Static shell + dark cyber theme + full UI layout
+- [ ] **Phase 2**: Supabase backend + Auth + Quick Capture persistence
+- [ ] **Phase 3**: Projects & Tasks CRUD with relational linking
+- [ ] **Phase 4**: Habit streak logic + real-time tracking
+- [ ] **Phase 5**: Charts, mobile optimization, keyboard shortcuts polish
+
+---
+
+## 📄 License
+
+MIT — built with ❤️ by [Manas](https://github.com/iammsp-star)
