@@ -4,21 +4,17 @@ interface UIState {
   sidebarOpen: boolean;
   sidebarCollapsed: boolean;
   quickCaptureOpen: boolean;
-  aboutOpen: boolean;
   toggleSidebar: () => void;
   setSidebarOpen: (open: boolean) => void;
   toggleSidebarCollapse: () => void;
   toggleQuickCapture: () => void;
   setQuickCaptureOpen: (open: boolean) => void;
-  toggleAbout: () => void;
-  setAboutOpen: (open: boolean) => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
   sidebarOpen: false,
   sidebarCollapsed: false,
   quickCaptureOpen: false,
-  aboutOpen: false,
   toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
   setSidebarOpen: (open) => set({ sidebarOpen: open }),
   toggleSidebarCollapse: () =>
@@ -26,6 +22,4 @@ export const useUIStore = create<UIState>((set) => ({
   toggleQuickCapture: () =>
     set((state) => ({ quickCaptureOpen: !state.quickCaptureOpen })),
   setQuickCaptureOpen: (open) => set({ quickCaptureOpen: open }),
-  toggleAbout: () => set((state) => ({ aboutOpen: !state.aboutOpen })),
-  setAboutOpen: (open) => set({ aboutOpen: open }),
 }));

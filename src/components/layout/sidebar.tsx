@@ -14,7 +14,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Zap,
-  Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useUIStore } from "@/store/ui-store";
@@ -39,37 +38,6 @@ export function Sidebar() {
   const pathname = usePathname();
   const collapsed = useUIStore((s) => s.sidebarCollapsed);
   const toggleCollapse = useUIStore((s) => s.toggleSidebarCollapse);
-  const toggleAbout = useUIStore((s) => s.toggleAbout);
-
-  const aboutButton = (
-    <button
-      onClick={toggleAbout}
-      className={cn(
-        "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 w-full group",
-        "text-muted-foreground hover:text-white hover:bg-white/5"
-      )}
-    >
-      <Info
-        className="w-[18px] h-[18px] flex-shrink-0 transition-colors group-hover:text-primary"
-      />
-      {!collapsed && (
-        <span className="animate-fade-in">About OS</span>
-      )}
-    </button>
-  );
-
-  const aboutItem = collapsed ? (
-    <Tooltip>
-      <TooltipTrigger className="w-full" render={<div />}>
-        {aboutButton}
-      </TooltipTrigger>
-      <TooltipContent side="right" className="font-medium">
-        About OS
-      </TooltipContent>
-    </Tooltip>
-  ) : (
-    aboutButton
-  );
 
   return (
     <aside
@@ -144,11 +112,6 @@ export function Sidebar() {
           return linkContent;
         })}
       </nav>
-
-      {/* About OS Button */}
-      <div className="px-2 mb-1">
-        {aboutItem}
-      </div>
 
       {/* Collapse Toggle */}
       <div className="px-2 pb-4">
