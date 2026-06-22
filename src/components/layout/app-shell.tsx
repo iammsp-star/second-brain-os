@@ -13,6 +13,7 @@ import {
   Dumbbell,
   Zap,
   Menu,
+  Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ import { useUIStore } from "@/store/ui-store";
 import { Sidebar } from "./sidebar";
 import { TopNav } from "./top-nav";
 import { QuickCaptureModal } from "@/components/quick-capture/quick-capture-modal";
+import { AboutModal } from "./about-modal";
 import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -44,6 +46,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const sidebarOpen = useUIStore((s) => s.sidebarOpen);
   const setSidebarOpen = useUIStore((s) => s.setSidebarOpen);
+  const toggleAbout = useUIStore((s) => s.toggleAbout);
 
   return (
     <TooltipProvider>
@@ -101,6 +104,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   </Link>
                 );
               })}
+              {/* About Button for Mobile */}
+              <button
+                onClick={() => {
+                  setSidebarOpen(false);
+                  toggleAbout();
+                }}
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium w-full text-muted-foreground hover:text-white hover:bg-white/5 transition-all duration-200"
+              >
+                <Info className="w-[18px] h-[18px] flex-shrink-0 text-muted-foreground" />
+                <span>About OS</span>
+              </button>
             </nav>
           </SheetContent>
         </Sheet>
@@ -128,6 +142,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         {/* Quick Capture Modal (global) */}
         <QuickCaptureModal />
+
+        {/* About Modal (global) */}
+        <AboutModal />
       </div>
     </TooltipProvider>
   );
