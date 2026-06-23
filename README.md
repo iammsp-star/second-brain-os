@@ -51,17 +51,34 @@ Plus glassmorphism cards, glow effects, smooth animations, and custom scrollbars
 
 ## 🚀 Getting Started
 
-```bash
-# Clone the repo
-git clone https://github.com/iammsp-star/second-brain-os.git
-cd second-brain-os
+### Prerequisites
 
-# Install dependencies
-npm install
+You need a Supabase project set up. Create a project at [supabase.com](https://supabase.com) and retrieve your project URL and anon API key.
 
-# Run development server
-npm run dev
-```
+### Local Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/iammsp-star/second-brain-os.git
+   cd second-brain-os
+   ```
+
+2. **Configure environment variables:**
+   Create a `.env.local` file in the root directory:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-project-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -117,7 +134,7 @@ src/
 ## 🗺️ Roadmap
 
 - [x] **Phase 1**: Static shell + dark cyber theme + full UI layout
-- [ ] **Phase 2**: Supabase backend + Auth + Quick Capture persistence
+- [x] **Phase 2**: Supabase backend + Auth (Credentials / Sign Up / Google OAuth / Anonymous Guest session)
 - [ ] **Phase 3**: Projects & Tasks CRUD with relational linking
 - [ ] **Phase 4**: Habit streak logic + real-time tracking
 - [ ] **Phase 5**: Charts, mobile optimization, keyboard shortcuts polish
